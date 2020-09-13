@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:Web.Controllers.ClienteController.Get">
+            <summary>
+            Buscar todos os clientes.
+            </summary>
+            <remarks>
+            Retorna uma array com todos os clientes cadastrados.
+            </remarks>
+        </member>
+        <member name="M:Web.Controllers.ClienteController.Get(System.Int32)">
+            <summary>
+            Buscar cliente pelo ID.
+            </summary>
+            <remarks>
+            Retorna o cliente correspondente ao ID.
+            </remarks>
+            <param name="id">ID do cliente.</param>
+        </member>
+        <member name="M:Web.Controllers.ClienteController.Put(System.Int32,Domain.Entity.Cliente)">
+            <summary>
+            Atualizar cliente.
+            </summary>
+            <remarks>
+            Atualiza cliente pelo ID com as informações fornecidas.
+            </remarks>
+            <param name="id">ID do cliente.</param>
+            <param name="cliente">Objeto com informações do cliente.</param>
+        </member>
+        <member name="M:Web.Controllers.ClienteController.Post(Domain.Entity.Cliente)">
+            <summary>
+            Inserir cliente
+            </summary>
+            <remarks>
+            Insere cliente com as informações fornecidas.
+            </remarks>
+            <param name="cliente">Objeto com informações do cliente.</param>
+        </member>
+        <member name="M:Web.Controllers.ClienteController.Delete(System.Int32)">
+            <summary>
+            Apagar cliente.
+            </summary>
+            <remarks>
+            Apaga cliente correspondente ao ID fornecido.
+            </remarks>
+            <param name="id">ID do cliente.</param>
+        </member>
+        <member name="M:Web.Controllers.EnderecoController.Get">
+            <summary>
+            Buscar todos os endereços.
+            </summary>
+            <remarks>
+            Retorna uma array com todos os endereços cadastrados.
+            </remarks>
+        </member>
+        <member name="M:Web.Controllers.EnderecoController.Get(System.Int32)">
+            <summary>
+            Buscar endereço pelo ID.
+            </summary>
+            <remarks>
+            Retorna o endereço correspondente ao ID.
+            </remarks>
+            <param name="id">ID do endereço.</param>
+        </member>
+        <member name="M:Web.Controllers.EnderecoController.Put(System.Int32,Domain.Entity.Endereco)">
+            <summary>
+            Atualizar endereço.
+            </summary>
+            <remarks>
+            Atualiza endereço pelo ID com as informações fornecidas.
+            </remarks>
+            <param name="id">ID do cliente.</param>
+            <param name="endereco">Objeto com informações do endereço.</param>
+        </member>
+        <member name="M:Web.Controllers.EnderecoController.Post(Domain.Entity.Endereco)">
+            <summary>
+            Inserir endereço
+            </summary>
+            <remarks>
+            Insere endereço com as informações fornecidas.
+            </remarks>
+            <param name="endereco">Objeto com informações do endereço.</param>
+        </member>
+        <member name="M:Web.Controllers.EnderecoController.Delete(System.Int32)">
+            <summary>
+            Apagar endereço.
+            </summary>
+            <remarks>
+            Apaga endereço correspondente ao ID fornecido.
+            </remarks>
+            <param name="id">ID do cliente.</param>
+        </member>
+    </members>
+</doc>
