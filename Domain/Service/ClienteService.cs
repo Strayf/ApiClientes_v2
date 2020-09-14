@@ -1,4 +1,5 @@
 ﻿using Domain.Entity;
+using Domain.Helper;
 using Domain.Interface.Repository;
 using Domain.Interface.Service;
 using System;
@@ -18,6 +19,7 @@ namespace Domain.Service
 
         public void Add(Cliente cliente)
         {
+            ValidaCliente(cliente);
             _clienteRepository.Add(cliente);
         }
 
@@ -45,7 +47,19 @@ namespace Domain.Service
 
         public void Update(int id, Cliente cliente)
         {
+            ValidaCliente(cliente);
             _clienteRepository.Update(id, cliente);
+        }
+
+        private void ValidaCliente(Cliente cliente)
+        {
+            Notification notif = new Notification();
+            cliente.Validar(notif);
+
+            if (notif.HasErrors())
+            {
+                throw new Exception("Erro(s) ao validar dados: " + notif.ListErrors());
+            }
         }
     }
 }

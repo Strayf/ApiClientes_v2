@@ -1,4 +1,6 @@
 ﻿using System;
+using Domain.Helper;
+using Web.Helper;
 
 namespace Domain.Entity
 {
@@ -22,6 +24,18 @@ namespace Domain.Entity
             return (dtFim.Year - dtInicio.Year - 1) +
                     (((dtFim.Month > dtInicio.Month) ||
                     ((dtFim.Month == dtInicio.Month) && (dtFim.Day >= dtInicio.Day))) ? 1 : 0);
+        }
+
+        public void Validar(Notification notif)
+        {
+            if (!CpfValido())
+                notif.AddError("CPF Inválido");
+
+            if (DataNascimento == null)
+                notif.AddError("Data de Nascimento é obrigatória");
+
+            if (Auxiliares.AcimaDoLimite(Nome, 30))
+                notif.AddError("Nome acima de 30 caracteres não é permitido");
         }
 
         public bool CpfValido()

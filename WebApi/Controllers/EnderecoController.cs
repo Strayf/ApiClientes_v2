@@ -81,20 +81,5 @@ namespace Web.Controllers
         {
             _enderecoService.Delete(id);
         }
-
-        private void ValidaEndereco(Endereco endereco)
-        {
-            if (Auxiliares.AcimaDoLimite(endereco.Logradouro, 50))
-                ModelState.AddModelError("Logradouro", "Logradouro acima de 50 caracteres não é permitido");
-
-            if (Auxiliares.AcimaDoLimite(endereco.Estado, 40))
-                ModelState.AddModelError("Estado", "Estado acima de 40 caracteres não é permitido");
-
-            if (Auxiliares.AcimaDoLimite(endereco.Cidade, 40))
-                ModelState.AddModelError("Cidade", "Cidade acima de 40 caracteres não é permitido");
-
-            if (Auxiliares.AcimaDoLimite(endereco.Bairro, 40))
-                ModelState.AddModelError("Bairro", "Bairro acima de 40 caracteres não é permitido");
-        }
     }
 }

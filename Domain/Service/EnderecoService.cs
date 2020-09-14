@@ -1,6 +1,8 @@
 ﻿using Domain.Entity;
+using Domain.Helper;
 using Domain.Interface.Repository;
 using Domain.Interface.Service;
+using System;
 using System.Collections.Generic;
 
 namespace Domain.Service
@@ -17,6 +19,7 @@ namespace Domain.Service
 
         public void Add(Endereco endereco)
         {
+            ValidaEndereco(endereco);
             _enderecoRepository.Add(endereco);
         }
 
@@ -37,7 +40,19 @@ namespace Domain.Service
 
         public void Update(int id, Endereco endereco)
         {
+            ValidaEndereco(endereco);
             _enderecoRepository.Update(id, endereco);
+        }
+
+        private void ValidaEndereco(Endereco endereco)
+        {
+            Notification notif = new Notification();
+            endereco.Validar(notif);
+
+            if (notif.HasErrors())
+            {
+                throw new Exception("Erro(s) ao validar dados: " + notif.ListErrors());
+            }
         }
     }
 }
