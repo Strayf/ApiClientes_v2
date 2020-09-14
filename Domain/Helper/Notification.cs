@@ -7,7 +7,7 @@ namespace Domain.Helper
 {
     public class Notification
     {
-        private List<string> Errors;
+        private List<string> Errors = new List<string>();
 
         public string ListErrors()
         {
