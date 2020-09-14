@@ -37,7 +37,7 @@ namespace Web.Controllers
         /// </remarks>
         /// <param name="id">ID do endereço.</param>
         [HttpGet("BuscarPorId")]
-        public Endereco Get(int id)
+        public Endereco Get([FromQuery]int id)
         {
             return _enderecoService.GetEndereco(id);
         }
@@ -51,7 +51,7 @@ namespace Web.Controllers
         /// <param name="id">ID do cliente.</param>
         /// <param name="endereco">Objeto com informações do endereço.</param>
         [HttpPut("Atualizar")]
-        public void Put(int id, Endereco endereco)
+        public void Put([FromQuery]int id, [FromBody]Endereco endereco)
         {
             _enderecoService.Update(id, endereco);
         }
@@ -64,7 +64,7 @@ namespace Web.Controllers
         /// </remarks>
         /// <param name="endereco">Objeto com informações do endereço.</param>
         [HttpPost("Inserir")]
-        public void Post(Endereco endereco)
+        public void Post([FromBody]Endereco endereco)
         {
             _enderecoService.Add(endereco);
         }
@@ -77,7 +77,7 @@ namespace Web.Controllers
         /// </remarks>
         /// <param name="id">ID do cliente.</param>
         [HttpDelete("Apagar")]
-        public void Delete(int id)
+        public void Delete([FromQuery]int id)
         {
             _enderecoService.Delete(id);
         }

@@ -40,7 +40,7 @@ namespace Web.Controllers
         /// </remarks>
         /// <param name="id">ID do cliente.</param>
         [HttpGet("BuscarPorId")]
-        public Cliente Get(int id)
+        public Cliente Get([FromQuery]int id)
         {
             return _clienteService.GetCliente(id);
         }
@@ -54,7 +54,7 @@ namespace Web.Controllers
         /// <param name="id">ID do cliente.</param>
         /// <param name="cliente">Objeto com informações do cliente.</param>
         [HttpPut("Atualizar")]
-        public void Put(int id, Cliente cliente)
+        public void Put([FromQuery]int id, [FromBody]Cliente cliente)
         {
             if (ModelState.IsValid)
             {
@@ -74,7 +74,7 @@ namespace Web.Controllers
         /// </remarks>
         /// <param name="cliente">Objeto com informações do cliente.</param>
         [HttpPost("Inserir")]
-        public void Post(Cliente cliente)
+        public void Post([FromBody]Cliente cliente)
         {
             if (ModelState.IsValid)
             {
@@ -94,7 +94,7 @@ namespace Web.Controllers
         /// </remarks>
         /// <param name="id">ID do cliente.</param>
         [HttpDelete("Apagar")]
-        public void Delete(int id)
+        public void Delete([FromQuery]int id)
         {
             _clienteService.Delete(id);
         }
